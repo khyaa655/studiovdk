@@ -1,0 +1,10 @@
+ h1 {
+  color: #1aedd8;
+  font-family: 'Courier', monospace;
+  animation: glow 1s ease-in infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 30px #1aedd8;, 0 0 68px #1aedd8;
+  }

@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>Database COV</title>
+</head>
+<body>
+<script src="covid.js"></script>  
+<style>
+body {
+ background-color: black;
+} 
+.floating { 
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+ 
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }   
+}
+h1 {
+  color: white;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 1px #fff,
+    0 0 2px #fff,
+    0 0 4px #0fa,
+    0 0 1px #0fa,
+    0 0 7px #0fa,
+    0 0 5px #0fa,
+    0 0 130px #0fa;
+  font-family: verdana;
+  font-size: 250%;
+}
+
+p {
+animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 20px;
+    margin-top: 5px;
+  font-family: verdana;
+  color: white;
+  font-size: 90%;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 2px #fff,
+    0 0 2px #fff,
+    0 0 1px #0fa,
+    0 0 2px #0fa,
+    0 0 2px #0fa,
+    0 0 1px #0fa,
+    0 0 6px #0fa;
+	
+
+}
+</style>
+    <h1>DATABASE REALTIME</h1>
+	<p>COVID WORLD</p>
+   <p>
+   Kasus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span id="data-positif"></span><br>
+   Sembuh&nbsp;&nbsp;&nbsp;: <span id="data-sembuh"></span> <br>
+   Meninggal&nbsp;&nbsp;&nbsp;:<span id="data-meninggal"></span><br>
+   Kasus Aktif &nbsp;:<span id="data-aktif"></span>
+   </p><br>
+   <p>
+   LAST UPDATE<br>
+   <span id="data-update"></span>
+   </p><br>
+   <p>
+   GEMPA TERKINI<br><br>
+   Kedalaman: <span id="data-kedalam"></span><br>
+   Wilayah: <span id="data-lokasi"></span><br>
+   Kekuatan: <span id="data-magnu"></span>&nbsp;&nbsp;Magnutido<br>
+   Waktu: <span id="data-wktu"></span><br>
+   </p>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        getDataIndonesia();
+    })
+    document.addEventListener("DOMContentLoaded", function() {
+        getgempa();
+    })
+</script>
+</body>
+</html>
