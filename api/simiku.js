@@ -4,7 +4,7 @@ function sayHi(){
   var name = txtName.value;
   let viko = " " + name
   document.getElementById("statusd").innerHTML = `Pesan terkirim, dan tunggu simi merespon dengan pesan: ${viko}`
-  fetch(`https://viko-api.herokuapp.com/api/f/simi?apikey=rxking&query=${viko}`)
+  fetch(`https://viko-api.herokuapp.com/api/f/botkuh?apikey=rxking&query=${viko}`)
     .then(response => response.json())
     .then(data => {
         console.log(data)
