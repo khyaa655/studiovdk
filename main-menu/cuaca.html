@@ -7,12 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>StudioVDK - Dashboard</title>
+  <title>StudioVDK - Gempa</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
   <script src="databs.js"></script>
   <script src="berita.js"></script>
+  <script src="screp.js"></script>
 </head>
 
 <body id="page-top">
@@ -44,9 +45,9 @@
             <a class="collapse-item" href="https://viko-api.herokuapp.com/">viko-api</a>
           </div>
         </div>
-	     <a class="nav-link collapsed" href="./cuaca.html">
+	     <a class="nav-link collapsed" href="#" data-toggle="collapse" aria-expanded="true" aria-controls="collapseForm">
           <i class="fab fa fa-globe"></i>
-          <span>GEMPA </span>
+          <span>GEMPA -</span>
         </a>
       </li>
       <hr class="sidebar-divider">
@@ -95,42 +96,6 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-tasks fa-fw"></i>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header"> Task </h6>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Design Button <div class="small float-right"><b>50%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Make Beautiful Transitions <div class="small float-right"><b>30%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Create Pie Chart <div class="small float-right"><b>75%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
-              </div>
-            </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -144,7 +109,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Gempa</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="http://studiovdk.herokuapp.com">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -152,19 +117,18 @@
           </div>
           <div class="row mb-3">
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Visitor</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="visits">loading...</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Gempa terkini</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-650" id="lock">load</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 0.38%</span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-users fa-2x text-primary"></i>
+                      <i class="fas fa-search fa-2x text-primary"></i>
                     </div>
                   </div>
                 </div>
@@ -176,116 +140,39 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">HEROKU SERVER</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Kekuatan</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="keku">load</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span>online</span>
+                        <span>Magnitudo</span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-server fa-2x text-success"></i>
+                      <i class="fas fa-wifi fa-2x text-success"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <!-- New User Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Waktu</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="jam">Loading</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">KORDINASI - WAKTU</div>
+                      <div class="h7 mb-0 font-weight-bold text-gray-800" id="budic">Load</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2" id="vikoo"><i class="fas fa-arrow-up" ></i></span>
+                        <span class="text-success mr-2" id="doi"><i class="fas fa-arrow-up" ></i></span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-clock fa-2x text-info"></i>
+                      <i class="fas fa-circle fa-2x text-info"></i>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-5 col-md-6 mb-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">Instagram</div>
-                      <div class="h8 mb-0 font-weight-bold text-gray-800" id="followw">Load...</div>
-                      <p id="foll"></p>
-                      <a href="https://www.instagram.com/vikodwik_rmx/">FOLLOW DONG</a>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-camera fa-2x text-warning"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-7">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">BLOG VIKO</h6>
-                </div>
-                <div class="card-body">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">VIKO-API <div class="small float-right"><a href="https://viko-api.blogspot.com/">Buka situs</a></div><br>
-                    </div>
-                  </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Invoice Example -->
-            <div class="col-xl-9 col-lg-7 mb-4">
-              <div class="card">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">PROJECT</h6>
-                </div>
-                <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>Customer</th>
-                        <th>Nama project</th>
-                        <th>Status</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>VikoDK</td>
-                        <td>YTMP3 DOWNLOADER</td>
-                        <td><span class="badge badge-success">Online</span></td>
-                        <td><a href="http://studiovdk.herokuapp.com/ytmp3/index.html" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td>VikoDK & ZAHIR</td>
-                        <td>ISLAM API</td>
-                        <td><span class="badge badge-success">Online</span></td>
-                        <td><a href="http://viko-islamic.herokuapp.com/" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>
-                      <tr>
-                        <td>VikoDK</td>
-                        <td>textmaker api</td>
-                        <td><span class="badge badge-success">Online</span></td>
-                        <td><a href="http://viko-textmaker.herokuapp.com/http://viko-textmaker.herokuapp.com/" class="btn btn-sm btn-primary">Detail</a></td>
-                      </tr>                               
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer"></div>
-              </div>
-            </div>
-        <!---Container Fluid-->
+			</div>
       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -315,6 +202,12 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         igstalk();
+    })
+     document.addEventListener("DOMContentLoaded", function() {
+        gmpa();
+    })
+     document.addEventListener("DOMContentLoaded", function() {
+        cuacat();
     })
 </script>
 </body>
