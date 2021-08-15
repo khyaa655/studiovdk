@@ -9,10 +9,12 @@ function gmpa() {
         let keku = data.result.Magnitudo
         let lint = `Lintang: ${data.result.Lintang}<br>Bujur: ${data.result.Bujur}`
         let doiku = data.result.Waktu
+        let tumb = data.result.Map
         document.getElementById("lock").innerHTML = lock
         document.getElementById("keku").innerHTML = keku
         document.getElementById("budic").innerHTML = lint
         document.getElementById("doi").innerHTML = doiku
+        document.getElementById("imgee").src = tumb
     })
     .catch(err => {
         alert(`kesalahan kemungkinan offline ${err}`)
