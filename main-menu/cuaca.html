@@ -14,15 +14,21 @@
   <script src="databs.js"></script>
   <script src="berita.js"></script>
   <script src="screp.js"></script>
+  <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
 </head>
 
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-info" href="index.html" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
         <div class="sidebar-brand-icon">
-          <img src="https://i.ibb.co/mRgyq9q/logo2.png">
+<lord-icon
+    src="https://cdn.lordicon.com/ochimkct.json"
+    trigger="loop"
+    colors="primary:#ffffff,secondary:#66eece"
+    style="width:90px;height:90px">
+</lord-icon>
         </div>
         <div class="sidebar-brand-text mx-3">StudioVDK</div>
       </a>
@@ -45,21 +51,21 @@
             <a class="collapse-item" href="https://viko-api.herokuapp.com/">viko-api</a>
           </div>
         </div>
-        <li class="nav-item">
+      </li>
+      <li class="nav-item">
         <a class="nav-link collapsed" href="./cuaca.html">
           <i class="fas fa-fw fa-globe"></i>
           <span>Gempa</span>
         </a>
-      </li>
       </li>
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin" style=""></div>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+      <div id="content" style="	background-image: url(https://pingendo.com/site-assets/cover.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;" class="bg-info">
         <!-- TopBar -->
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top" style="background-image: url(&quot;https://pingendo.com/site-assets/cover.jpg&quot;); background-position: left top; background-size: 100%; background-repeat: repeat;">
+        <nav class="navbar navbar-expand bg-navbar topbar mb-4 static-top navbar-dark bg-info" style="background-image: url(&quot;https://pingendo.com/site-assets/cover.jpg&quot;); background-position: left top; background-size: 100%; background-repeat: repeat;">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
@@ -84,7 +90,7 @@
                 <span class="badge badge-danger badge-counter">1+</span>
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header"> Alerts Center </h6>
+                <h6 class="dropdown-header"> Informasi </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
@@ -92,8 +98,8 @@
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 14, 2021</div>
-                    <span class="font-weight-bold">perbaikan viko-api.herokuapp.com bagian semua image</span>
+                    <div class="small text-gray-500">Owner</div>
+                    <span id="crito" class="font-weight-bold"></span>
                   </div>
                 </a>
               </div>
@@ -111,9 +117,9 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Gempa</h1>
+            <h1 class="h3 mb-0 text-gray-800 text-warning">Gempa</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="http://studiovdk.herokuapp.com">Home</a></li>
+              <li class="breadcrumb-item"><a href="http://studiovdk.herokuapp.com/main-menu/index.html">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </div>
@@ -125,12 +131,19 @@
                   <div class="row align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Gempa terkini</div>
-                      <div class="h6 mb-0 font-weight-bold text-gray-650" id="lock">load</div>
+                      <div class="h6 mb-0 font-weight-bold text-gray-650" id="lock"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-search fa-2x text-primary"></i>
+                      <lord-icon
+    src="https://cdn.lordicon.com/gqzfzudq.json"
+    trigger="loop"
+    colors="primary:#121331,secondary:#08a88a"
+    style="width:50px;height:50px">
+</lord-icon>
                     </div>
                   </div>
                 </div>
@@ -143,13 +156,20 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Kekuatan</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="keku">load</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="keku"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
                         <span>Magnitudo</span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-wifi fa-2x text-success"></i>
+                      <lord-icon
+    src="https://cdn.lordicon.com/gqdnbnwt.json"
+    trigger="loop"
+    colors="primary:#121331,secondary:#08a88a"
+    style="width:50px;height:50px">
+</lord-icon>
                     </div>
                   </div>
                 </div>
@@ -162,13 +182,20 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">KOORDINAT - WAKTU</div>
-                      <div class="h7 mb-0 font-weight-bold text-gray-800" id="budic">Load</div>
+                      <div class="h7 mb-0 font-weight-bold text-gray-800" id="budic"><div class="spinner-grow" role="status">
+  <span class="sr-only">Loading...</span>
+</div></div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2" id="doi"><i class="fas fa-arrow-up" ></i></span>
+                        <span class="text-success mr-2" id="doi"><i class="fas fa-arrow-up"></i></span>
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-circle fa-2x text-info"></i>
+                      <lord-icon
+    src="https://cdn.lordicon.com/iltqorsz.json"
+    trigger="loop"
+    colors="primary:#121331,secondary:#08a88a"
+    style="width:50px;height:50px">
+</lord-icon>
                     </div>
                   </div>
                 </div>
@@ -181,14 +208,14 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">MAP LOKASI</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <img alt="" src="./emror.png" name="logo" width="250" height="360" id="imgee"/> </div>
-                      </div>
+                        <img alt="" src="./emror.png" name="logo" width="250" height="360" id="imgee"> </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-			</div>
+          </div>
+        </div>
       </div>
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
@@ -208,7 +235,7 @@
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
-  <script async src="https://api.countapi.xyz/hit/studiovdk.herokuapp.com/visits?callback=cb"></script>
+  <script async="" src="https://api.countapi.xyz/hit/studiovdk.herokuapp.com/visits?callback=cb"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -217,15 +244,15 @@
   <script src="js/demo/chart-area-demo.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        igstalk();
+      igstalk();
     })
-     document.addEventListener("DOMContentLoaded", function() {
-        gmpa();
+    document.addEventListener("DOMContentLoaded", function() {
+      gmpa();
     })
-     document.addEventListener("DOMContentLoaded", function() {
-        cuacat();
+    document.addEventListener("DOMContentLoaded", function() {
+      vikoapi();
     })
-</script>
+  </script>
 </body>
 
 </html>
